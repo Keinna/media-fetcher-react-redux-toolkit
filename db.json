@@ -1,5 +1,30 @@
 {
-    "users": [{ "id": 1, "name": "Anniek" }],
-    "albums": [],
-    "photos": []
+  "users": [
+    {
+      "id": 1,
+      "name": "Anniek"
+    },
+    {
+      "name": "Mr. Jean Weber",
+      "id": 2
+    },
+    {
+      "name": "Stephen Hegmann IV",
+      "id": 3
+    },
+    {
+      "name": "Wanda Pollich Sr.",
+      "id": 4
+    },
+    {
+      "name": "Alvin Mante",
+      "id": 5
+    },
+    {
+      "name": "Joey Goldner III",
+      "id": 6
+    }
+  ],
+  "albums": [],
+  "photos": []
 }
