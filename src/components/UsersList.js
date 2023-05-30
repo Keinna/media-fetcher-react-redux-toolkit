@@ -1,45 +1,27 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { fetchUsers, addUser } from "../store";
 import Button from "./Button";
 import SkeletonLoader from "./SkeletonLoader";
+import { useThunk } from "../hooks/use-thunk";
 
 function UsersList() {
     //keep track loading big list of users
-    const [isLoadingUsers, setIsLoadingUsers] = useState(false);
-    const [loadingUsersError, setIsLoadingUsersError] = useState(null);
-    const [isCreatingUser, setIsCreatingUser] = useState(false);
-    const [creatingUsersError, setCreatingUsersError] = useState(null);
-    const dispatch = useDispatch();
+    const [doFetchUsers, isLoadingUsers, loadingUsersError] =
+        useThunk(fetchUsers);
+    const [doCreateUser, isCreatingUser, creatingUsersError] =
+        useThunk(addUser);
+
     const { data } = useSelector((state) => {
         return state.users;
     });
 
     useEffect(() => {
-        setIsLoadingUsers(true);
-        //returns promise, always goes into .then also when fails -> unwrap()
-        dispatch(fetchUsers())
-            //returns new promise where conventional rules are followed
-            .unwrap()
-            // .then(() =>{
-
-            // })
-            .catch((err) => {
-                //gives error object
-                setIsLoadingUsersError(err);
-            })
-            .finally(() => {
-                setIsLoadingUsers(false);
-                setIsLoadingUsers(false);
-            });
-    }, [dispatch]);
+        doFetchUsers();
+    }, [doFetchUsers]);
 
     const handleUserAdd = () => {
-        setIsCreatingUser(true);
-        dispatch(addUser())
-            .unwrap()
-            .catch((err) => setCreatingUsersError(err))
-            .finally(() => setIsCreatingUser(false));
+        doCreateUser();
     };
 
     if (isLoadingUsers) {
