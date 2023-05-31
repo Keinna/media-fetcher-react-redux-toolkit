@@ -12,8 +12,9 @@ const albumsApi = createApi({
     //how to make each request
     endpoints(builder) {
         return {
-            //used as a template for hook albumsApi.fetchAlbumsQuery
+            //used as a template for custom hook albumsApi.fetchAlbumsQuery
             fetchAlbums: builder.query({
+                //user is send along hook
                 query: (user) => {
                     return {
                         url: "/albums",
