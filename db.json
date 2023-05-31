@@ -1,36 +1,66 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Anniek"
-        },
-        {
-            "name": "Mr. Jean Weber",
-            "id": 2
-        },
-        {
-            "name": "Martha Gutkowski V",
-            "id": 3
-        },
-        {
-            "name": "Ira Kuhlman",
-            "id": 4
-        },
-        {
-            "name": "Meredith Prosacco I",
-            "id": 5
-        },
-        {
-            "name": "Gilbert Parisian",
-            "id": 6
-        }
-    ],
-    "albums": [
-        {
-            "id": 10,
-            "title": "Mountains",
-            "userId": 1
-        }
-    ],
-    "photos": []
+  "users": [
+    {
+      "id": 1,
+      "name": "Anniek"
+    },
+    {
+      "name": "Mr. Jean Weber",
+      "id": 2
+    },
+    {
+      "name": "Martha Gutkowski V",
+      "id": 3
+    },
+    {
+      "name": "Ira Kuhlman",
+      "id": 4
+    },
+    {
+      "name": "Meredith Prosacco I",
+      "id": 5
+    },
+    {
+      "name": "Gilbert Parisian",
+      "id": 6
+    }
+  ],
+  "albums": [
+    {
+      "id": 10,
+      "title": "Mountains",
+      "userId": 1
+    },
+    {
+      "userID": 1,
+      "title": "Handmade Soft Fish",
+      "id": 11
+    },
+    {
+      "userID": 1,
+      "title": "Intelligent Cotton Hat",
+      "id": 12
+    },
+    {
+      "userID": 1,
+      "title": "Modern Concrete Salad",
+      "id": 13
+    },
+    {
+      "userID": 1,
+      "title": "Elegant Rubber Chair",
+      "id": 14
+    },
+    {
+      "userID": 1,
+      "title": "Incredible Frozen Soap",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "title": "Rustic Fresh Bike",
+      "id": 16
+    }
+  ],
+  "photos": []
 }

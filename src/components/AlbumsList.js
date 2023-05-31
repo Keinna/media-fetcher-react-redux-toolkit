@@ -1,23 +1,28 @@
-import { useFetchAlbumsQuery } from "../store";
+import { useFetchAlbumsQuery, useAddAlbumMutation } from "../store";
 import SkeletonLoader from "./SkeletonLoader";
 import ExpandablePanel from "./ExpandablePanel";
 import Button from "./Button";
 
 function AlbumsList({ user }) {
-    //got user in the hook  from api endpoint
     const { data, error, isLoading } = useFetchAlbumsQuery(user);
+    const [addAlbum, results] = useAddAlbumMutation();
+
+    const handleAddAlbum = () => {
+        addAlbum(user);
+    };
 
     let content;
     if (isLoading) {
-        <SkeletonLoader times={3} />;
+        content = <SkeletonLoader times={3} />;
     } else if (error) {
-        content = <div>Error loading albums</div>;
+        content = <div>Error loading albums.</div>;
     } else {
         content = data.map((album) => {
             const header = <div>{album.title}</div>;
+
             return (
                 <ExpandablePanel key={album.id} header={header}>
-                    List of photos in album
+                    List of photos in the album
                 </ExpandablePanel>
             );
         });
@@ -25,7 +30,10 @@ function AlbumsList({ user }) {
 
     return (
         <div>
-            <div>Albums for {user.name}</div>
+            <div>
+                Albums for {user.name}
+                <Button onClick={handleAddAlbum}>+ Add Album</Button>
+            </div>
             <div>{content}</div>
         </div>
     );
