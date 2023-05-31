@@ -4,6 +4,7 @@ import { removeUser } from "../store";
 //for showing loading spinner
 import { useThunk } from "../hooks/use-thunk";
 import ExpandablePanel from "./ExpandablePanel";
+import AlbumsList from "./AlbumsList";
 
 function UserListItem({ user }) {
     const [doRemoveUser, isLoading, error] = useThunk(removeUser);
@@ -22,7 +23,11 @@ function UserListItem({ user }) {
         </>
     );
 
-    return <ExpandablePanel header={header}>Content!!</ExpandablePanel>;
+    return (
+        <ExpandablePanel header={header}>
+            <AlbumsList user={user} />
+        </ExpandablePanel>
+    );
 }
 
 export default UserListItem;
