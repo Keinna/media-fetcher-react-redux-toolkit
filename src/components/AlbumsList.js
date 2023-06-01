@@ -4,7 +4,9 @@ import ExpandablePanel from "./ExpandablePanel";
 import Button from "./Button";
 
 function AlbumsList({ user }) {
+    //queryhook, make request when component is first displayed
     const { data, error, isLoading } = useFetchAlbumsQuery(user);
+    //mutation -> get back array with elements (addAlbum), (results) object similar to the one returned from query
     const [addAlbum, results] = useAddAlbumMutation();
 
     const handleAddAlbum = () => {

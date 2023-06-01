@@ -8,32 +8,37 @@ const albumsApi = createApi({
   }),
   endpoints(builder) {
     return {
-      addAlbum: builder.mutation({
-        query: (user) => {
-          return {
-            url: '/albums',
-            method: 'POST',
-            body: {
-              userId: user.id,
-              title: faker.commerce.productName(),
+        addAlbum: builder.mutation({
+            //after run mutation find all queries and mark them as out of date
+            invalidatesTags: ["Album"],
+            //function that is used to tell rtq about parameter to use to make request
+            query: (user) => {
+                return {
+                    url: "/albums",
+                    method: "POST",
+                    body: {
+                        userId: user.id,
+                        title: faker.commerce.productName(),
+                    },
+                };
             },
-          };
-        },
-      }),
-      fetchAlbums: builder.query({
-        query: (user) => {
-          return {
-            url: '/albums',
-            params: {
-              userId: user.id,
+        }),
+        fetchAlbums: builder.query({
+            providesTags: ["Album"],
+            query: (user) => {
+                return {
+                    url: "/albums",
+                    params: {
+                        userId: user.id,
+                    },
+                    method: "GET",
+                };
             },
-            method: 'GET',
-          };
-        },
-      }),
+        }),
     };
   },
 });
 
+//automatically generated hooks
 export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi;
 export { albumsApi };

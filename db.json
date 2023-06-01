@@ -32,34 +32,14 @@
       "userId": 1
     },
     {
-      "userID": 1,
-      "title": "Handmade Soft Fish",
+      "userId": 1,
+      "title": "Intelligent Granite Keyboard",
       "id": 11
     },
     {
-      "userID": 1,
-      "title": "Intelligent Cotton Hat",
+      "userId": 2,
+      "title": "Elegant Fresh Ball",
       "id": 12
-    },
-    {
-      "userID": 1,
-      "title": "Modern Concrete Salad",
-      "id": 13
-    },
-    {
-      "userID": 1,
-      "title": "Elegant Rubber Chair",
-      "id": 14
-    },
-    {
-      "userID": 1,
-      "title": "Incredible Frozen Soap",
-      "id": 15
-    },
-    {
-      "userId": 1,
-      "title": "Rustic Fresh Bike",
-      "id": 16
     }
   ],
   "photos": []
