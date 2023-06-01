@@ -8,6 +8,17 @@ const albumsApi = createApi({
   }),
   endpoints(builder) {
     return {
+        removeAlbum: builder.mutation({
+            invalidatesTags: (result, error, album) => {
+                return [{ type: "Album", id: album.userId }];
+            },
+            query: (album) => {
+                return {
+                    url: `/albums/${album.id}`,
+                    method: "DELETE",
+                };
+            },
+        }),
         addAlbum: builder.mutation({
             //after run mutation find all queries and mark them as out of date
             invalidatesTags: (result, error, user) => {
@@ -46,5 +57,9 @@ const albumsApi = createApi({
 });
 
 //automatically generated hooks
-export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi;
+export const {
+    useFetchAlbumsQuery,
+    useAddAlbumMutation,
+    useRemoveAlbumMutation,
+} = albumsApi;
 export { albumsApi };

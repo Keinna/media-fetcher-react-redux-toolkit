@@ -7,50 +7,9 @@
     {
       "name": "Mr. Jean Weber",
       "id": 2
-    },
-    {
-      "name": "Martha Gutkowski V",
-      "id": 3
-    },
-    {
-      "name": "Ira Kuhlman",
-      "id": 4
-    },
-    {
-      "name": "Meredith Prosacco I",
-      "id": 5
-    },
-    {
-      "name": "Gilbert Parisian",
-      "id": 6
     }
   ],
   "albums": [
-    {
-      "id": 10,
-      "title": "Mountains",
-      "userId": 1
-    },
-    {
-      "userId": 1,
-      "title": "Intelligent Granite Keyboard",
-      "id": 11
-    },
-    {
-      "userId": 2,
-      "title": "Elegant Fresh Ball",
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "title": "Refined Metal Sausages",
-      "id": 13
-    },
-    {
-      "userId": 2,
-      "title": "Bespoke Concrete Pizza",
-      "id": 14
-    },
     {
       "userId": 1,
       "title": "Refined Plastic Soap",
@@ -70,6 +29,11 @@
       "userId": 1,
       "title": "Ergonomic Concrete Sausages",
       "id": 18
+    },
+    {
+      "userId": 2,
+      "title": "Fantastic Frozen Pizza",
+      "id": 19
     }
   ],
   "photos": []
