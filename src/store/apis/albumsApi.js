@@ -10,7 +10,9 @@ const albumsApi = createApi({
     return {
         addAlbum: builder.mutation({
             //after run mutation find all queries and mark them as out of date
-            invalidatesTags: ["Album"],
+            invalidatesTags: (result, error, user) => {
+                return [{ type: "Album", id: user.id }];
+            },
             //function that is used to tell rtq about parameter to use to make request
             query: (user) => {
                 return {
@@ -24,7 +26,11 @@ const albumsApi = createApi({
             },
         }),
         fetchAlbums: builder.query({
-            providesTags: ["Album"],
+            //user is argument that is past to the hook
+            providesTags: (result, error, user) => {
+                //dynamically generated tag
+                return [{ type: "Album", id: user.id }];
+            },
             query: (user) => {
                 return {
                     url: "/albums",
