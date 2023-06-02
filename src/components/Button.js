@@ -19,8 +19,8 @@ function Button({
         {
             //give opactiy 80 when loading is true
             "opacity-80": loading,
-            "border-blue-500 bg-blue-500 text-white": primary,
-            "border-gray-900 bg-gray-900 text-white": secondary,
+            "border-blue-500 bg-indigo-500 text-white": primary,
+            "border-gray-900 bg-gray-300 text-white": secondary,
             "border-green-500 bg-green-500 text-white": success,
             "border-yellow-400 bg-yellow-400 text-white": warning,
             "border-red-500 bg-red-500 text-white": danger,

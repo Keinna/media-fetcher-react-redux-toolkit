@@ -30,6 +30,7 @@ function PhotosList({ album }) {
                 <Button
                     loading={addPhotoResults.isLoading}
                     onClick={handleAddPhoto}
+                    primary
                 >
                     + Add Photo
                 </Button>

@@ -17,6 +17,7 @@ function AlbumsListItem({ album }) {
                 loading={results.isLoading}
                 onClick={handleRemoveAlbum}
                 className="mr-2"
+                danger
             >
                 <GoTrashcan />
             </Button>
